@@ -1,69 +1,31 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	export let country: any;
+	export let images: any;
 </script>
 
 <div
 	class="list-none p-6 mx-auto bg-gray-100 text-gray-800 rounded-md shadow-sm hover:shadow-md flex flex-col items-center max-w-sm"
 >
-	<img class="h-30 w-45" src={country.flag} alt={country.name} />
-	<h1 class="text-2xl text-blue-900 pt-2">{country.name}</h1>
 
-	<table class="my-2 text-xs">
-		<tbody>
-			<tr>
-				<td class="px-2 font-semibold text-gray-500">
-					<span class="font-bold text-blue-900">Capital:</span>
-				</td>
-				<td class="px-2 text-xs text-gray-600"> {country.capital} </td>
-			</tr>
-			<tr>
-				<td class="px-2">
-					<span class="font-bold text-blue-900">Sub-Region, regionalBlocs:</span>
-				</td>
-				<td class="px-2 text-xs text-gray-600"> {country.subregion}, {country.region}</td>
-			</tr>
-			<tr>
-				<td class="px-2">
-					<span class="font-bold text-blue-900">Main Language:</span>
-				</td>
-				<td class="px-2 text-xs text-gray-600"> {country.languages[0].name}</td>
-			</tr>
-			<tr>
-				<td class="px-2">
-					<span class="font-bold text-blue-900">Main Currency:</span>
-				</td>
-				<td class="px-2 text-xs text-gray-600">
-					{country.currencies[0].name} ({country.currencies[0].symbol})</td
-				>
-			</tr>
-			<tr>
-				<td class="px-2">
-					<span class="font-bold text-blue-900">Population:</span>
-				</td>
-				<td class="px-2 text-xs text-gray-600"> {country.population} </td>
-			</tr>
-			<tr>
-				<td class="px-2">
-					<span class="font-bold text-blue-900">Main Time Zone:</span>
-				</td>
-				<td class="px-2 text-xs text-gray-600"> {country.timezones[0]} </td>
-			</tr>
-		</tbody>
-	</table>
+
+	<img class="h-30 w-45" src={country.flag} alt={country.page_title} />
+	<h1 class="text-2xl text-blue-900 pt-2">{country.page_title}</h1>
+
+
 
 	<div class="py-2 px-4">
 		<span
 			class="inline-block bg-gray-200 rounded-full p-1 mx-1 my-1 text-xs font-semibold text-gray-700"
-			>Alpha2 Code: {country.alpha2Code}</span
+			>Alpha2 Code: {country.page_title}</span
 		>
 		<span
 			class="inline-block bg-gray-200 rounded-full p-1 mx-1 my-1 text-xs font-semibold text-gray-700"
-			>Alpha3 Code: {country.alpha3Code}</span
+			>Alpha3 Code: {country.page_title}</span
 		>
 		<span
 			class="inline-block bg-gray-200 rounded-full p-1 mx-1 my-1 text-xs font-semibold text-gray-700"
-			>Domain: {country.topLevelDomain}</span
+			>Domain: {country.page_title}</span
 		>
 	</div>
 

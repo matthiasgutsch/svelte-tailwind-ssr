@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 import type { apiCountryBrief, CountryBrief } from '$lib/models/country';
 import type { User } from '$lib/models/user';
 
-const COUNTRIES_BASE_PATH = 'https://restcountries.com/v2';
+const COUNTRIES_BASE_PATH = 'https://api.matthiasgutsch.com';
 const GITHUB_BASE_PATH = 'https://api.github.com/users';
 const username = 'AndrewJBateman';
 export const countries = writable([]);
@@ -21,17 +21,12 @@ export const fetchUserData = async () => {
 
 // Fetch JSON data - 3 fields only - for all countries from a REST API
 export const fetchCountries = async () => {
-	const url = `${COUNTRIES_BASE_PATH}/all?fields=name,flag,alpha3Code`;
+	const url = `${COUNTRIES_BASE_PATH}/products`;
 	const res = await fetch(url);
-	let countryBriefData: CountryBrief = { id: '', name: '', image: '' };
+	let countryBriefData: CountryBrief = { id: ''};
 	if (res.ok) {
-		const data = await res.json();
-		countryBriefData = data.map((data: apiCountryBrief) => ({
-			id: data.alpha3Code.toLowerCase(),
-			name: data.name,
-			image: data.flag
-		}));
-		return countryBriefData;
+		const countryDetails = await res.json();
+		return countryDetails;
 	}
 	throw new Error('Unable to fetch a list of countries');
 };
@@ -39,7 +34,7 @@ export const fetchCountries = async () => {
 // Fetch JSON data on country with alpha3 code matching id from a REST API
 export const fetchCountryById = async (id: string) => {
 	try {
-		const url = `${COUNTRIES_BASE_PATH}/alpha/${id}`;
+		const url = `${COUNTRIES_BASE_PATH}/products/id/${id}`;
 		const res = await fetch(url);
 		if (res.ok) {
 			const countryDetails = await res.json();
@@ -49,3 +44,4 @@ export const fetchCountryById = async (id: string) => {
 		throw new Error('Unable to fetch country details', err);
 	}
 };
+

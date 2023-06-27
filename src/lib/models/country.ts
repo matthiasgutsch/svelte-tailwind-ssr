@@ -7,8 +7,6 @@ export interface apiCountryBrief {
 
 export interface CountryBrief {
 	id: string;
-	image: string;
-	name: string;
 }
 
 export interface Country extends apiCountryBrief {
@@ -35,6 +33,13 @@ export interface Country extends apiCountryBrief {
 	topLevelDomain: [string];
 
 }
+
+export interface Images {
+	svg: string;
+	png: string;
+  }
+
+
 
 export interface Flags {
   svg: string;

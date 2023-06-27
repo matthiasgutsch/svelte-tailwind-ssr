@@ -7,7 +7,7 @@
 </script>
 
 <svelte:head>
-	<title>Country Details for {country.name}</title>
+	<title>{country.page_title}</title>
 </svelte:head>
 
 <div class="px-auto pt-2">
