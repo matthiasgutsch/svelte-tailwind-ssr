@@ -4,6 +4,8 @@
 	import { fade } from 'svelte/transition';
 
 	export let country: CountryBrief;
+
+
 </script>
 
 <a

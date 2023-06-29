@@ -23,7 +23,6 @@ export const fetchUserData = async () => {
 export const fetchCountries = async () => {
 	const url = `${COUNTRIES_BASE_PATH}/products`;
 	const res = await fetch(url);
-	let countryBriefData: CountryBrief = { id: ''};
 	if (res.ok) {
 		const countryDetails = await res.json();
 		return countryDetails;
@@ -40,6 +39,12 @@ export const fetchCountryById = async (id: string) => {
 			const countryDetails = await res.json();
 			return countryDetails;
 		}
+		const images = await fetch(url);
+		if (res.ok) {
+			const countryDetailsImages = await images.json();
+			return countryDetailsImages;
+		}
+
 	} catch (err: any) {
 		throw new Error('Unable to fetch country details', err);
 	}

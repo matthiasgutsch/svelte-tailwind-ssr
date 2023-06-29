@@ -7,6 +7,9 @@ export interface apiCountryBrief {
 
 export interface CountryBrief {
 	id: string;
+	page_title: string;
+	page_url: string;
+	image: string;
 }
 
 export interface Country extends apiCountryBrief {

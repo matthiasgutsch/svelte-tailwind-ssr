@@ -6,9 +6,11 @@ import { fetchCountryById } from '$lib/server/api';
 export const load: PageServerLoad = async ({ params: { id }, setHeaders }) => {
 	try {
 		const country = await fetchCountryById(id);
+		const images = await fetchCountryById(id);
 		console.log('country: ', country);
 		setHeaders({ 'cache-control': 'max-age=360' });
-		return { country };
+		return { country,images };
+
 	} catch (err) {
 		throw error(404, {
 			message: 'Country details not found'

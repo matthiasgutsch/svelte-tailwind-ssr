@@ -4,6 +4,8 @@
 
 	export let data: PageData;
 	let country = data.country;
+	let images = data.images;
+
 </script>
 
 <svelte:head>
@@ -11,5 +13,5 @@
 </svelte:head>
 
 <div class="px-auto pt-2">
-	<CountryDetailCard {country} />
+	<CountryDetailCard {country} {images}/>
 </div>
