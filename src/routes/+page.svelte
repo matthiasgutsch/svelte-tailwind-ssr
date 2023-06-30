@@ -1,20 +1,10 @@
 <script lang="ts">
 	import CountryCard from '$lib/components/countryCard.svelte';
-	import { filterByName } from '$lib/utils/filters.svelte';
 
 	export let data: any;
 
 	let searchTerm = '';
 	let filteredCountries = data.countries;
-
-	$: lowerName = searchTerm?.toLowerCase();
-	$: {
-		if (lowerName) {
-			filteredCountries = filterByName(data.countries, lowerName);
-		} else {
-			filteredCountries = data.countries;
-		}
-	}
 </script>
 
 <svelte:head>

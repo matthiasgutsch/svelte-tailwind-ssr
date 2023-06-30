@@ -6,6 +6,7 @@ const COUNTRIES_BASE_PATH = 'https://api.matthiasgutsch.com';
 const GITHUB_BASE_PATH = 'https://api.github.com/users';
 const username = 'AndrewJBateman';
 export const countries = writable([]);
+export const countryDetails = writable([]);
 export const userData = writable([]);
 
 // Fetch user Github data
@@ -39,14 +40,27 @@ export const fetchCountryById = async (id: string) => {
 			const countryDetails = await res.json();
 			return countryDetails;
 		}
-		const images = await fetch(url);
+
+	} catch (err: any) {
+		throw new Error('Unable to fetch country details', err);
+	}
+};
+
+export const fetchCountryImagesById = async (id: string) => {
+	try {
+		const url = `${COUNTRIES_BASE_PATH}/products/slideshow/${id}`;
+		const res = await fetch(url);
 		if (res.ok) {
-			const countryDetailsImages = await images.json();
-			return countryDetailsImages;
+			const countryImageDetails = await res.json();
+			return countryImageDetails;
 		}
 
 	} catch (err: any) {
 		throw new Error('Unable to fetch country details', err);
 	}
 };
+
+
+
+
 
