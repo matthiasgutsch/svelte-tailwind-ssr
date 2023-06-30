@@ -3,10 +3,7 @@
 	import { fade } from 'svelte/transition';
 	export let country: any;
 	export let images: any;
-
-
 </script>
-
 <div
 	class="list-none p-6 mx-auto bg-gray-100 text-gray-800 rounded-md shadow-sm hover:shadow-md flex flex-col items-center max-w-sm"
 >
@@ -17,10 +14,9 @@
 
 
 
-
 	<img class="h-30 w-45" src={country.image} alt={country.page_title} />
-	<h1 class="text-2xl text-blue-900 pt-2">{country.page_title}</h1>
 
+	{@html country.description_2}
 
 
 	<div class="py-2 px-4">
