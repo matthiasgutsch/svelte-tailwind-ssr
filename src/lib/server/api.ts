@@ -9,7 +9,7 @@ export const countries = writable([]);
 export const countryDetails = writable([]);
 export const userData = writable([]);
 export const countryImageDetails = writable([]);
-
+export const token = 'ee'
 // Fetch user Github data
 export const fetchUserData = async () => {
 	try {
@@ -25,9 +25,19 @@ export const fetchUserData = async () => {
 
 export const fetchCountries = async (params: any) => {
 
+	const init = {
+		headers: {
+			'Accept': 'application/json',
+			'Authorization': `${token}`
+		},
+		params: {
+
+		},
+	};
+
 	const { key, title } = params;
 	const url = `${COUNTRIES_BASE_PATH}/products`;
-	const res = await fetch(url, params);
+	const res = await fetch(url, init);
 	if (res.ok) {
 		const countryDetails = await res.json();
 		return countryDetails;
