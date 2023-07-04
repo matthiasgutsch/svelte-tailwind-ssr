@@ -4,7 +4,8 @@ import { fetchCountries } from '$lib/server/api';
 
 export const load: PageServerLoad = async ({setHeaders}) => {
   try {
-    const countries = await fetchCountries();
+	const params = {limit: 1};
+    const countries = await fetchCountries(params);
     setHeaders({ 'cache-control': 'max-age=360' });
 		return { countries };
 	} catch (err) {

@@ -8,6 +8,7 @@ const username = 'AndrewJBateman';
 export const countries = writable([]);
 export const countryDetails = writable([]);
 export const userData = writable([]);
+export const countryImageDetails = writable([]);
 
 // Fetch user Github data
 export const fetchUserData = async () => {
@@ -21,15 +22,22 @@ export const fetchUserData = async () => {
 };
 
 // Fetch JSON data - 3 fields only - for all countries from a REST API
-export const fetchCountries = async () => {
+
+export const fetchCountries = async (params: any) => {
+
+	const { key, title } = params;
 	const url = `${COUNTRIES_BASE_PATH}/products`;
-	const res = await fetch(url);
+	const res = await fetch(url, params);
 	if (res.ok) {
 		const countryDetails = await res.json();
 		return countryDetails;
 	}
 	throw new Error('Unable to fetch a list of countries');
-};
+  }
+
+
+
+
 
 // Fetch JSON data on country with alpha3 code matching id from a REST API
 export const fetchCountryById = async (id: string) => {

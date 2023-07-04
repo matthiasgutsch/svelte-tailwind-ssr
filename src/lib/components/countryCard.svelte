@@ -1,11 +1,7 @@
 <script lang="ts">
 	import type { CountryBrief } from '$lib/models/country';
-
 	import { fade } from 'svelte/transition';
-
 	export let country: CountryBrief;
-
-
 </script>
 
 <a
