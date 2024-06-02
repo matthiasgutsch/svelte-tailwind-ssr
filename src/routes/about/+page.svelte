@@ -6,6 +6,4 @@
 	<title>About Studio Nexo</title>
 </svelte:head>
 
-<main>
 	<AboutCard />
-</main>

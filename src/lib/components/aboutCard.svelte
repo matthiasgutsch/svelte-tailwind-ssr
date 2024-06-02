@@ -2,20 +2,9 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<main>
-	<div class="min-h-screen min-w-screen" transition:fade>
-		<div class="flex justify-center w-full h-screen pt-10 mx-auto">
-			<div class="max-w-xs">
-				<div class="rounded-lg bg-gray-100 shadow-lg">
-					<div class="p-2 pt-5 pb-0 photo-wrapper">
-						<img
-							class="w-40 h-40 mx-auto rounded-full"
-							width="40px"
-							height="40px"
-							src="../../../assets/globe-large.png"
-							alt="globe"
-						/>
-					</div>
+	<div class="container" transition:fade>
+	
+					
 
 					<div class="p-2">
 						<h4 class="pb-1 text-xl font-medium leading-8 text-center text-blue-900">
@@ -49,8 +38,4 @@
 							>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
 	</div>
-</main>
