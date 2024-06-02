@@ -1,6 +1,11 @@
+<script lang="ts">
+	import { fade } from 'svelte/transition';
+</script>
+
+
 <section class="header">
 	<div class="container">
-		<div class="col-4">	<a aria-label="home nav link" href="/">
+		<div class="col-4">	<a aria-label="home nav link" transition:fade href="/">
 			Nexo</a></div>
 	</div>
 </section>
