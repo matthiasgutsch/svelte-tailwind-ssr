@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>About Svelte Countries API App</title>
+	<title>About Studio Nexo</title>
 </svelte:head>
 
 <main>

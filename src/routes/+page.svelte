@@ -12,9 +12,11 @@
 </svelte:head>
 
 
+<div class="container">
 
-<div class="px-4 grid gap-4 md:grid-cols-4 sm:grid-cols-2 xs:grid-cols-1">
+<div class="row">
 	{#each filteredCountries as country, index (index)}
 		<CountryCard {country} />
 	{/each}
+</div>
 </div>
