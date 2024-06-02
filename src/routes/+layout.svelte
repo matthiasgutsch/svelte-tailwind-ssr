@@ -8,5 +8,5 @@
 </div>
 
 <style>
-	@import url('../styles/global.css');
+	@import url('../styles/global.less');
 </style>
