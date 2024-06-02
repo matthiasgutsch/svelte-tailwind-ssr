@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Svelte Kit API Data</title>
+	<title>Studio Nexo</title>
 </svelte:head>
 
 
