@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { CountryBrief } from '$lib/models/country';
+	import type { CountryBrief } from '$lib/models/work';
 	import { fade } from 'svelte/transition';
 	export let country: CountryBrief;
 </script>

@@ -1,5 +1,5 @@
 import { writable } from 'svelte/store';
-import type { apiCountryBrief, CountryBrief } from '$lib/models/country';
+import type { apiCountryBrief, CountryBrief } from '$lib/models/work';
 import type { User } from '$lib/models/user';
 
 const COUNTRIES_BASE_PATH = 'https://api.matthiasgutsch.com';
