@@ -34,3 +34,17 @@ a {
     text-decoration: none;
     margin-top: 10px;
 }
+
+.offcanvas {
+    width: 50% !important;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .offcanvas {
+        width: 100% !important;
+    }
+    
+
+}
