@@ -5,11 +5,12 @@
 
 
 <slot></slot><style>
-	@import url('../styles/global.less');
+@import url('../styles/global.less');
 </style><slot></slot><script>import { browser } from "$app/environment";
 import { onMount } from "svelte";
 import "../app.scss";
 import Nav from './nav.svelte';
+
 
 onMount(async () => {
   if (!browser) return;
