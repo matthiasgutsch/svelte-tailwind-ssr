@@ -32,7 +32,7 @@
 <section class="header">
 	<div class="container">
 		<div class="col-4">	<a  href="/" transition:fade>
-			<div class="logo">Nexo</div></a></div>
+			<div class="logo">Matthias Gutsch</div></a></div>
 
 			<a  data-bs-toggle="offcanvas" href="#offcanvasExample">menu</a>
 	</div>
