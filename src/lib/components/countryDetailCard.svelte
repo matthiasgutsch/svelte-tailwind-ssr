@@ -6,6 +6,7 @@
 </script>
 
 <div class="container">
+	<div class="portfolio-detail">
 	<a href="/" transition:fade> Back to List </a>
 	<h1>{country.page_title}</h1>
 	{@html country.description_2}
@@ -17,5 +18,6 @@
 				<br/>
 			{/each}
 	</div>
+</div>
 </div>
 

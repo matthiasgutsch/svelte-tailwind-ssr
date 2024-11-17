@@ -34,7 +34,15 @@
 		<div class="col-4">	<a  href="/" transition:fade>
 			<div class="logo">Matthias Gutsch</div></a></div>
 
-			<a  data-bs-toggle="offcanvas" href="#offcanvasExample">menu</a>
+
+			<a data-bs-toggle="offcanvas" href="#offcanvasExample" class="icon cp">
+				<div class="hamburger">
+					<div class="menui top-menu"></div>
+					<div class="menui mid-menu"></div>
+					<div class="menui bottom-menu"></div>
+				</div>
+			</a>
+
 	</div>
 </section>
 
