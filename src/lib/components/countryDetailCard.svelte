@@ -1,29 +1,77 @@
 <script lang="ts">
 	import type { CountryBrief } from '$lib/models/country';
 	import { fade } from 'svelte/transition';
+	import { onMount } from 'svelte';
 	export let country: any;
 	export let images: any;
+
+	let elements: HTMLElement[] = [];
+
+	// Initialize IntersectionObserver
+	let observer: IntersectionObserver;
+
+	onMount(() => {
+		observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('visible');
+					}
+				});
+			},
+			{ threshold: 0.1 }
+		);
+
+		// Observe each element
+		elements.forEach((el) => observer.observe(el));
+
+		// Clean up observer on component unmount
+		return () => {
+			if (observer) observer.disconnect();
+		};
+	});
+
+	function registerElement(el: HTMLElement) {
+		if (el) elements.push(el);
+	}
 </script>
 
 <div class="container">
 	<div class="portfolio-detail">
 		<a href="/" transition:fade> Back to List </a>
-		
+		<br /><br />
+
 		{#if images.length > 0}
-		<div class="row">
-			<img class="img-fluid first-image" src={images[0].image} alt={country.page_title} />
-		</div>
+			<div class="row">
+				<img
+					class="img-fluid first-image hidden"
+					use:registerElement
+					src={images[0].image}
+					alt={country.page_title}
+				/>
+			</div>
 		{/if}
-		
-		<h1>{country.page_title}</h1>
-		{@html country.description_2}
-		
+		<div class="description">
+			<div class="row">
+				<div class="col-12 col-md-4">
+					<h1>{country.page_title}</h1>
+				</div>
+				<div class="col-12 col-md-8">
+					{@html country.description_2}
+				</div>
+			</div>
+		</div>
 		<div class="row">
 			{#each images as image, index (index)}
 				{#if index > 0}
-					<img class="img-fluid" src={image.image} alt={country.page_title} />
-					<div class="clearfix"></div>
-					<br/>
+					<img
+						class="img-fluid hidden"
+						use:registerElement
+						src={image.image}
+						alt={country.page_title}
+					/>
+					<div class="clearfix" />
+					<br />
 				{/if}
 			{/each}
 		</div>

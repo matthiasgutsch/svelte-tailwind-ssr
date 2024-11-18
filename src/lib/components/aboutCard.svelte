@@ -4,38 +4,24 @@
 
 	<div class="container" transition:fade>
 	
-					
-
-					<div class="p-2">
-						<h4 class="pb-1 text-xl font-medium leading-8 text-center text-blue-900">
-							Countries API
-						</h4>
-						<div class="px-2 text-xs font-semibold text-left text-gray-600">
+		<div class="profile">
+		<div class="row">
+					<div class="col-12">
+						<h1 class="pb-1 text-xl font-medium leading-8 text-left text-blue-900">
+							About
+						</h1>
+						<div class="col-12 col-md-7">
 							<p class="pb-2">
-								<span class="font-bold text-blue-900"
-									>A list of countries is fetched from the REST Countries API</span
-								>
-								The country Alpha3 Code is used as a country id for navigation to a Country Detail page
-								using route params id to fetch full country details from the API.
-							</p>
-							<p>
-								<span class="font-bold text-blue-900">The data on the Contact page</span>
-								is fetched from the Github API. No API key is required to search for a user up to a set
-								search limit.
+								I'm a Senior Web and Graphic Designer specialised in brand identity, creating websites, also for different devices. I have a strong graphic background and web-designer skills. I can work on complete projects from conception to completion independently or as part of a team. I use clean and well structured graphic and webdesign.
+								<br><br>
+								I have gained over ten years experience working in-house, agency side and as a freelancer. I have a background in marketing which allows me to understand brands and make informed design decisions. I'm passionate about design and aim to make unique websites which are both functional and beautiful.
 							</p>
 							<br />
-							<p>
-								<span class="font-bold text-blue-900">The Stack:</span> Svelte, RxJS, Tailwind CSS.
-							</p>
+							
 						</div>
 
-						<div class="my-2 text-center">
-							<a
-								class="text-xs italic font-medium text-indigo-600 hover:underline hover:text-indigo-800"
-								href="https://github.com/AndrewJBateman/svelte-tailwind-ssr"
-								target="_blank"
-								rel="noopener noreferrer">See Github Repo.</a
-							>
-						</div>
+						
 					</div>
+	</div>
+</div>
 	</div>

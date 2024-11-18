@@ -133,11 +133,37 @@ a {
 	margin: 0px;
 	top: 0px;
     float: right;
-	right: 30px;
+	right: 0px;
+}
+
+
+.profile p {
+    font-size: 1.475rem;
+    margin-bottom: 20px;
+    line-height: 2rem;
+}
+
+.profile h1 {
+	font-size: 2.8rem;
+	font-family: avertasemibold;
+	line-height: 3.2rem;
+	margin-bottom: 20px;
 }
 
 .work-item {
 	margin-bottom: 30px;
+}
+
+
+.portfolio-detail .description {
+    padding: 50px 0;
+}
+
+.portfolio-detail .description h1 {
+    font-size: 2.8rem;
+    font-family: avertasemibold;
+    line-height: 3.2rem;
+    margin-bottom: 20px;
 }
 
 .work-item h2 {
@@ -156,3 +182,37 @@ a {
 		width: 100% !important;
 	}
 }
+
+
+	/* Add initial hidden state and visible state for fade-in effect */
+	.hidden {
+		opacity: 0;
+		transform: translateY(20px);
+		transition: opacity 0.5s ease, transform 0.5s ease;
+	}
+
+	.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+
+
+    .full-overlay {
+        width: 100% !important; /* Full width */
+        max-width: 100%; /* Ensure no Bootstrap default constraints */
+        height: 100vh; /* Full height of the viewport */
+        background-color: rgba(0, 0, 0, 0.9); /* Dark overlay background */
+        color: white; /* White text for contrast */
+      }
+      
+      .full-overlay .offcanvas-body a {
+        display: block;
+        text-decoration: none;
+        margin-bottom: 1rem;
+      }
+      
+      .full-overlay .btn-close {
+        filter: invert(1); /* Lightens the close button for dark background */
+      }
+      
