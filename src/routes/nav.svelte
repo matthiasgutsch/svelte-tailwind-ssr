@@ -31,10 +31,14 @@
 </div>
 <section class="header">
 	<div class="container">
-		<div class="col-4">	<a  href="/" transition:fade>
-			<div class="logo">Matthias Gutsch</div></a></div>
+		<div class="row">
+		<div class="col-8 col-md-8">
+			<a  href="/" transition:fade>
+			<div class="logo">Matthias Gutsch</div></a>
+		</div>
 
 
+	<div class="col-4 col-md-4">	
 			<a data-bs-toggle="offcanvas" href="#offcanvasExample" class="icon cp">
 				<div class="hamburger">
 					<div class="menui top-menu"></div>
@@ -42,8 +46,10 @@
 					<div class="menui bottom-menu"></div>
 				</div>
 			</a>
-
 	</div>
+	</div>
+
+</div>
 </section>
 
 

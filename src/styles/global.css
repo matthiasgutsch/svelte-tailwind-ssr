@@ -125,13 +125,14 @@ a {
 
 .icon {
 	z-index: 999;
-	position: absolute;
+	position: relative;
 	display: block;
 	padding: 9px;
 	height: 40px;
 	width: 40px;
 	margin: 0px;
-	top: 50px;
+	top: 0px;
+    float: right;
 	right: 30px;
 }
 
