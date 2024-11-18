@@ -242,3 +242,8 @@ a {
         font-size: 1.5rem;
         cursor: pointer;
     }
+
+
+    .footer {
+        padding: 60px 0px;
+    }
