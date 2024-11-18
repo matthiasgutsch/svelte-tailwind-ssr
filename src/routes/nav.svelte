@@ -23,11 +23,11 @@
 		>&times;</button>
 
 		<a class="custom-overlay-link" aria-label="home nav link" href="/" on:click={toggleOverlay}>
-			<p>work</p>
+			<p>Work</p>
 		</a>
 
 		<a class="custom-overlay-link" aria-label="about nav link" href="/about" on:click={toggleOverlay}>
-			<p>about</p>
+			<p>About</p>
 		</a>
 
 		<a class="custom-overlay-link" aria-label="contact nav link" href="/contact" on:click={toggleOverlay}>
