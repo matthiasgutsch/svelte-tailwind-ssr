@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Contact Page</title>
+	<title>Contact Matthias Gutsch</title>
 </svelte:head>
 
 <main>

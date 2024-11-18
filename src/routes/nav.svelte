@@ -1,56 +1,54 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
+	let isOverlayVisible = false;
+
+	function toggleOverlay() {
+		isOverlayVisible = !isOverlayVisible;
+	}
 </script>
 
 <div 
-  class="offcanvas offcanvas-start full-overlay" 
-  tabindex="-1" 
-  id="offcanvasExample" 
-  aria-labelledby="offcanvasExampleLabel"
+	class="custom-overlay" 
+	class:hidden={!isOverlayVisible} 
+	transition:fade 
+	tabindex="-1"
 >
-  <div class="offcanvas-header">
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <a class="mx-2 bg-blue-900" aria-label="home nav link" href="/" transition:fade>
-      <div class="flex mx-2">
-        <p class="pt-1 hover:bg-blue-400">work</p>
-      </div>
-    </a>
+	<div class="custom-overlay-content">
+		<button type="button" class="custom-btn-close" on:click={toggleOverlay} aria-label="Close"></button>
 
-    <a class="mx-2 bg-blue-900" aria-label="home nav link" href="/about" transition:fade>
-      <div class="flex mx-2">
-        <p class="pt-1 hover:bg-blue-400">about</p>
-      </div>
-    </a>
+		<a class="custom-overlay-link" aria-label="home nav link" href="/" on:click={toggleOverlay}>
+			<p>work</p>
+		</a>
 
-    <a class="mx-2 bg-blue-900" aria-label="home nav link" href="/Contact" transition:fade>
-      <div class="flex mx-2">
-        <p class="pt-1 hover:bg-blue-400">Contact</p>
-      </div>
-    </a>
-  </div>
+		<a class="custom-overlay-link" aria-label="about nav link" href="/about" on:click={toggleOverlay}>
+			<p>about</p>
+		</a>
+
+		<a class="custom-overlay-link" aria-label="contact nav link" href="/contact" on:click={toggleOverlay}>
+			<p>Contact</p>
+		</a>
+	</div>
 </div>
 
 <section class="header">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 col-md-8">
-        <a href="/" transition:fade>
-          <div class="logo">Matthias Gutsch</div>
-        </a>
-        <p>graphic &amp; web designer</p>
-      </div>
+	<div class="container">
+		<div class="row">
+			<div class="col-8 col-md-8">
+				<a href="/" transition:fade>
+					<div class="logo">Matthias Gutsch</div>
+				</a>
+				<p>graphic &amp; web designer</p>
+			</div>
 
-      <div class="col-4 col-md-4">
-        <a data-bs-toggle="offcanvas" href="#offcanvasExample" class="icon cp">
-          <div class="hamburger">
-            <div class="menui top-menu"></div>
-            <div class="menui mid-menu"></div>
-            <div class="menui bottom-menu"></div>
-          </div>
-        </a>
-      </div>
-    </div>
-  </div>
+			<div class="col-4 col-md-4">
+				<a class="icon cp" on:click={toggleOverlay}>
+					<div class="hamburger">
+						<div class="menui top-menu"></div>
+						<div class="menui mid-menu"></div>
+						<div class="menui bottom-menu"></div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
 </section>

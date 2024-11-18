@@ -3,7 +3,7 @@
 </script>
 
 <svelte:head>
-	<title>About Studio Nexo</title>
+	<title>About Matthias Gutsch</title>
 </svelte:head>
 
 	<AboutCard />
