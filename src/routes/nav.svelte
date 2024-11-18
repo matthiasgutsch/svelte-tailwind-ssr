@@ -14,7 +14,13 @@
 	tabindex="-1"
 >
 	<div class="custom-overlay-content">
-		<button type="button" class="custom-btn-close" on:click={toggleOverlay} aria-label="Close"></button>
+		<!-- Close Button -->
+		<button 
+			type="button" 
+			class="custom-btn-close" 
+			on:click={toggleOverlay} 
+			aria-label="Close"
+		>&times;</button>
 
 		<a class="custom-overlay-link" aria-label="home nav link" href="/" on:click={toggleOverlay}>
 			<p>work</p>
