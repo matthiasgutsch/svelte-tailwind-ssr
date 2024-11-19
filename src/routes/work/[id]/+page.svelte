@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import CountryDetailCard from '$lib/components/countryDetailCard.svelte';
-	import CountryCard from '$lib/components/countryCard.svelte';
+	import WorkDetailCard from '$lib/components/WorkDetailCard.svelte';
+	import WorkCard from '$lib/components/WorkCard.svelte';
 
 	export let data: PageData;
 	let country = data.country;
@@ -19,7 +19,7 @@
 </svelte:head>
 
 <div class="px-auto pt-2">
-	<CountryDetailCard {country} {images}/>
+	<WorkDetailCard {country} {images}/>
 </div>
 
 

@@ -1,5 +1,5 @@
 <script lang="ts">
-	import CountryCard from '$lib/components/countryCard.svelte';
+	import WorkCard from '$lib/components/WorkCard.svelte';
 
 	export let data: any;
 
@@ -18,7 +18,7 @@
 	</div>
 <div class="row">
 	{#each filteredCountries as country, index (index)}
-		<CountryCard {country} />
+		<WorkCard {country} />
 	{/each}
 </div>
 </div>
