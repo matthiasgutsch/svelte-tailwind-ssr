@@ -1,16 +1,16 @@
 import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { fetchCountries } from '$lib/server/api';
+import { fetchWorks } from '$lib/server/api';
 
 export const load: PageServerLoad = async ({setHeaders}) => {
   try {
 	const params = {limit: 1};
-    const countries = await fetchCountries(params);
+    const works = await fetchWorks(params);
     setHeaders({ 'cache-control': 'max-age=360' });
-		return { countries };
+		return { works };
 	} catch (err) {
 		throw error(404, {
-			message: 'Country details not found'
+			message: 'Work details not found'
 		})
 	}
 }

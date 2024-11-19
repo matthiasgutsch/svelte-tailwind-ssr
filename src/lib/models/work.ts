@@ -1,18 +1,18 @@
-export interface apiCountryBrief {
+export interface apiWorkBrief {
 	alpha3Code: string;
 	flag: string;
 	name: string;
 	independent: boolean;
 }
 
-export interface CountryBrief {
+export interface WorkBrief {
 	id: string;
 	page_title: string;
 	page_url: string;
 	image: string;
 }
 
-export interface Country extends apiCountryBrief {
+export interface Work extends apiWorkBrief {
 	alpha2Code: string;
 	altSpellings: [string];
 	area: number | null;

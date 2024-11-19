@@ -1,23 +1,23 @@
 import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { fetchCountries, fetchCountryById, fetchCountryImagesById } from '$lib/server/api';
+import { fetchWorks, fetchWorkById, fetchWorkImagesById } from '$lib/server/api';
 
 /** @type {import('./$types').PageLoad} */
 export const load: PageServerLoad = async ({ params: { id }, setHeaders }) => {
 	try {
-		const country = await fetchCountryById(id);
-		const images = await fetchCountryImagesById(country.id);
+		const work = await fetchWorkById(id);
+		const images = await fetchWorkImagesById(work.id);
 
 		const params = {limit: 1};
 
 		
-		console.log('country: ', country);
+		console.log('work: ', work);
 		setHeaders({ 'cache-control': 'max-age=360' });
-		return { country,images };
+		return { work,images };
 
 	} catch (err) {
 		throw error(404, {
-			message: 'Country details not found'
+			message: 'Work details not found'
 		})
 	}
 

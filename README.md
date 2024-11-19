@@ -1,6 +1,6 @@
 # :zap: Svelte Tailwind SSR
 
-* Sveltejs kit used with Vite and RxJS & Tailwind CSS to display country & Github API data
+* Sveltejs kit used with Vite and RxJS & Tailwind CSS to display work & Github API data
 * Latest vite/Svelte3 folder layout using `+page.server.ts` to fetch server-side data to pass to `+page.svelte` client page.
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
@@ -27,21 +27,21 @@
 
 ## :books: General info
 
-* Displays grid of Tailwind-styled cards, one for each country
+* Displays grid of Tailwind-styled cards, one for each work
 * Tailwind CSS card markup shown using separate card components
-* Search bar shows all countries that match the user search text
-* Country detail page uses the country alpha3 code in lower case as the unique id passed by route params.
+* Search bar shows all works that match the user search text
+* Work detail page uses the work alpha3 code in lower case as the unique id passed by route params.
 * About page gives details of the app with a Github link
 * Contact page gives info. on the author via the Github API
-* API endpoint: `http://localhost:3000/api/countries/` shows all countries
-* API endpoint: `http://localhost:3000/api/countries/id` shows country with matching id
+* API endpoint: `http://localhost:3000/api/works/` shows all works
+* API endpoint: `http://localhost:3000/api/works/id` shows work with matching id
 * Unused Tailwind CSS is purged during build which makes for a much lighter bundle
-* [REST API Endpoints](https://restcountries.eu/#api-endpoints-code)
+* [REST API Endpoints](https://restworks.eu/#api-endpoints-code)
 
 ## :camera: Screenshots
 
 ![Frontend screenshot](./imgs/search.png)
-![Frontend screenshot](./imgs/country.png)
+![Frontend screenshot](./imgs/work.png)
 ![Frontend screenshot](./imgs/contact.png)
 ![Frontend screenshot](./imgs/about.png)
 ![Frontend screenshot](./imgs/api.png)
@@ -55,7 +55,7 @@
 * [Tailwind CSS v3](https://tailwindcss.com/) CSS framework
 * [Tailwind Colour Palette](https://tailwindcss.com/docs/customizing-colors#color-palette-reference)
 * [Online color converter, hex to Tailwind](https://tailwind-color-finder.vercel.app/)
-* [REST Countries API v2](https://restcountries.eu/) RESTful API with data on all world countries
+* [REST Works API v2](https://restworks.eu/) RESTful API with data on all world works
 
 ## :floppy_disk: Setup
 
@@ -70,7 +70,7 @@
 
 ## :computer: Code Examples
 
-* `store/datastore.ts` functions to fetch JSON data from Github & Restcountries APIs
+* `store/datastore.ts` functions to fetch JSON data from Github & Restworks APIs
 
 ```typescript
 // Fetch user data from Github REST API
@@ -83,9 +83,9 @@ export const user = ajax({
 	startWith([])
 );
 
-// Fetch JSON data - 3 fields only - for all countries from Restcountries API
-export const fetchCountries = async () => {
-	const url = 'https://restcountries.com/v2/all?fields=name,flag,alpha3Code';
+// Fetch JSON data - 3 fields only - for all works from Restworks API
+export const fetchWorks = async () => {
+	const url = 'https://restworks.com/v2/all?fields=name,flag,alpha3Code';
 	const res = await fetch(url);
 	const data = await res.json();
 	const loadedData = data.map((data) => ({
@@ -93,18 +93,18 @@ export const fetchCountries = async () => {
 		id: data.alpha3Code.toLowerCase(),
 		image: data.flag
 	}));
-	countries.set(loadedData);
+	works.set(loadedData);
 };
 
-// Fetch JSON data on country with alpha3 code matching id from Restcountries API
-export const fetchCountryById = async (id) => {
-	if (countryDetails[id]) return countryDetails[id];
+// Fetch JSON data on work with alpha3 code matching id from Restworks API
+export const fetchWorkById = async (id) => {
+	if (workDetails[id]) return workDetails[id];
 
 	try {
-		const url = `https://restcountries.com/v2/alpha/${id}`;
+		const url = `https://restworks.com/v2/alpha/${id}`;
 		const res = await fetch(url);
 		const data = await res.json();
-		countryDetails[id] = data;
+		workDetails[id] = data;
 		return data;
 	} catch (err) {
 		console.error(err);

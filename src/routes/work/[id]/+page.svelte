@@ -4,9 +4,9 @@
 	import WorkCard from '$lib/components/WorkCard.svelte';
 
 	export let data: PageData;
-	let country = data.country;
+	let work = data.work;
 	let images = data.images;
-	let countries = data.countries;
+	let works = data.works;
 
 
 
@@ -15,11 +15,11 @@
 
 
 <svelte:head>
-	<title>{country.page_title} | UX/UI Design, Frontend Development and Branding</title>
+	<title>{work.page_title} | UX/UI Design, Frontend Development and Branding</title>
 </svelte:head>
 
 <div class="px-auto pt-2">
-	<WorkDetailCard {country} {images}/>
+	<WorkDetailCard {work} {images}/>
 </div>
 
 

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import type { CountryBrief } from '$lib/models/country';
+	import type { WorkBrief } from '$lib/models/work';
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
-	export let country: any;
+	export let work: any;
 	export let images: any;
 
 	let elements: HTMLElement[] = [];
@@ -47,17 +47,17 @@
 					class="img-fluid first-image hidden"
 					use:registerElement
 					src={images[0].image}
-					alt={country.page_title}
+					alt={work.page_title}
 				/>
 			</div>
 		{/if}
 		<div class="description">
 			<div class="row">
 				<div class="col-12 col-md-4">
-					<h1>{country.page_title}</h1>
+					<h1>{work.page_title}</h1>
 				</div>
 				<div class="col-12 col-md-8">
-					{@html country.description_2}
+					{@html work.description_2}
 				</div>
 			</div>
 		</div>
@@ -68,7 +68,7 @@
 						class="img-fluid hidden"
 						use:registerElement
 						src={image.image}
-						alt={country.page_title}
+						alt={work.page_title}
 					/>
 					<div class="clearfix" />
 					<br />
