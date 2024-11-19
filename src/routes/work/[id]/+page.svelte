@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import WorkDetailCard from '$lib/components/WorkDetailCard.svelte';
-	import WorkCard from '$lib/components/WorkCard.svelte';
+	import WorkDetailCard from '$lib/components/workDetailCard.svelte';
+	import WorkCard from '$lib/components/workCard.svelte';
 
 	export let data: PageData;
 	let work = data.work;
