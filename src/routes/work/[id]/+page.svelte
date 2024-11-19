@@ -15,7 +15,7 @@
 
 
 <svelte:head>
-	<title>{country.page_title}</title>
+	<title>{country.page_title} | UX/UI Design, Frontend Development and Branding</title>
 </svelte:head>
 
 <div class="px-auto pt-2">

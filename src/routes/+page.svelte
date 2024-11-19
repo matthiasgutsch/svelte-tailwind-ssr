@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>Matthias Gutsch</title>
+	<title>UX/UI Designer, Frontend Developer, Graphic Designer Portfolio</title>
 </svelte:head>
 
 
