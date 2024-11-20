@@ -36,7 +36,7 @@
 	}
 </script>
 
-<div class="container">
+<div class="container" transition:fade>
 	<div class="portfolio-detail">
 		<a href="/" transition:fade> Back to List </a>
 		<br /><br />
