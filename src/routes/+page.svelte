@@ -1,14 +1,52 @@
 <script lang="ts">
 	import WorkCard from '$lib/components/workCard.svelte';
+	import { onMount } from 'svelte';
 
 	export let data: any;
 
 	let searchTerm = '';
 	let filteredWorks = data.works;
+
+
+	let script1: HTMLScriptElement;
+
+  onMount(() => {
+    // Load the first cookie script asynchronously
+    script1 = document.createElement('script');
+    script1.src = 'https://api.chartacoop.it/cookie/lwcnCookieNotice.js';
+    script1.async = true;
+    script1.type = 'text/javascript';
+
+    // Listen for the script to load before calling the function
+    script1.onload = () => {
+      // Now it's safe to call the lwcnCookieNotice function
+      if (typeof lwcnCookieNotice === 'function') {
+        lwcnCookieNotice();
+      } else {
+        console.error('lwcnCookieNotice function is not available');
+      }
+    };
+
+    document.head.appendChild(script1);
+
+    // Load the second cookie script asynchronously
+    const script2 = document.createElement('script');
+    script2.src = 'https://api.chartacoop.it/cookie/cartacoop.js';
+    script2.async = true;
+    script2.type = 'text/javascript';
+    document.head.appendChild(script2);
+
+    // Cleanup the scripts when the component is destroyed
+    return () => {
+      document.head.removeChild(script1);
+      document.head.removeChild(script2);
+    };
+  });
 </script>
 
 <svelte:head>
 	<title>UX/UI Designer, Frontend Developer, Graphic Designer Portfolio</title>
+
 </svelte:head>
 
 
