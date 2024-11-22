@@ -1,34 +1,37 @@
 <script lang="ts">
 	import WorkCard from '$lib/components/workCard.svelte';
 	import { onMount } from 'svelte';
-
+  
 	export let data: any;
-
+  
 	let searchTerm = '';
 	let filteredWorks = data.works;
-
+  
 	onMount(() => {
+	  // Delay script loading after the app has fully initialized
+	  setTimeout(() => {
 		// Load the first script asynchronously
 		const script1 = document.createElement('script');
 		script1.src = 'https://api.chartacoop.it/cookie/lwcnCookieNotice.js';
 		script1.async = true;
-		script1.type = 'text/javascript'; // Correcting the type attribute
+		script1.type = 'text/javascript';
 		document.head.appendChild(script1);
-
+  
 		// Load the second script asynchronously
 		const script2 = document.createElement('script');
 		script2.src = 'https://api.chartacoop.it/cookie/cartacoop.js';
 		script2.async = true;
-		script2.type = 'text/javascript'; // Correcting the type attribute
+		script2.type = 'text/javascript';
 		document.head.appendChild(script2);
-
+  
 		// Cleanup the scripts when the component is destroyed
 		return () => {
-			document.head.removeChild(script1);
-			document.head.removeChild(script2);
+		  document.head.removeChild(script1);
+		  document.head.removeChild(script2);
 		};
+	  }, 1000); // Delay loading for 1 second (adjust as needed)
 	});
-</script>
+  </script>
 
 <svelte:head>
 	<title>UX/UI Designer, Frontend Developer, Graphic Designer Portfolio</title>
