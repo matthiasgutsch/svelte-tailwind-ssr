@@ -9,6 +9,10 @@
 
 <svelte:head>
 	<title>UX/UI Designer, Frontend Developer, Graphic Designer Portfolio</title>
+
+	<script async src="https://api.chartacoop.it/cookie/lwcnCookieNotice.js" type="9817578c05a6135818995b81-text/javascript"></script>
+		<script async src="https://api.chartacoop.it/cookie/cartacoop.js" type="9817578c05a6135818995b81-text/javascript"></script>
+
 </svelte:head>
 
 
@@ -25,3 +29,5 @@
 
 
 <div class="footer"></div>
+
+
