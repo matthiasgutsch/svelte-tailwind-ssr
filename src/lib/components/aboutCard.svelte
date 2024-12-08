@@ -6,9 +6,9 @@
 	<div class="profile">
 		<div class="row">
 			<div class="col-12">
-				<h1 class="pb-1 text-xl font-medium leading-8 text-left text-blue-900">About</h1>
+				<h1 class="">About</h1>
 				<div class="col-12 col-md-7">
-					<p class="pb-2">
+					<p class="pb-2 description">
 						I am Matthias Gutsch, a Graphic / Web Designer specializing in Frontend Development and
 						UI/UX design. I have a strong traditional graphic design and WordPress, PHP, Angular,
 						CSS Framework Development background and i can work on complete projects from conception
